@@ -1,1 +1,0 @@
-# fctrlx-angular-file-to-base64
