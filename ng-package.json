@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/fctrlx-file-to-base64",
+  "dest": "../../dist/fctrlx-angular-file-reader",
   "lib": {
     "entryFile": "src/public-api.ts"
   }

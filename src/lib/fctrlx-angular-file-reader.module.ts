@@ -16,4 +16,4 @@ import { FctrlxFileToArrayBufferDirective } from './fctrlx-file-to-array-buffer.
     FctrlxFileToArrayBufferDirective,
   ],
 })
-export class FctrlxFileToBase64 { }
+export class FctrlxAngularFileReader { }

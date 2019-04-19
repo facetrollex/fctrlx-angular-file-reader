@@ -1,5 +1,5 @@
 /*
- * Public API Surface of fctrlx-file-to-base64
+ * Public API Surface of fctrlx-angular-file-reader
  */
 
-export * from './lib/fctrlx-file-to-base64.module';
+export * from './lib/fctrlx-angular-file-reader.module';
