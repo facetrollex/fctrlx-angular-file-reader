@@ -8,7 +8,7 @@ import {
 import { Base } from './Base';
 
 @Directive({
-    selector: '[fileToText]',
+  selector: '[fileToText]',
 })
 export class FctrlxFileToTextDirective extends Base {
   @Input() files: any;

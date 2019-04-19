@@ -1,16 +1,16 @@
 import {
-  Directive,
-  ElementRef,
-  EventEmitter,
-  Input,
-  Output,
+    Directive,
+    ElementRef,
+    EventEmitter,
+    Input,
+    Output,
 } from '@angular/core';
 import { Base } from './Base';
 
 @Directive({
-  selector: '[fileToBase64]',
+  selector: '[fileToArrBuf]',
 })
-export class FctrlxFileToBase64Directive extends Base {
+export class FctrlxFileToArrayBufferDirective extends Base {
   @Input() files: any;
   @Input() type: string;
   @Input() multiple: undefined | null | string | boolean;
@@ -18,10 +18,10 @@ export class FctrlxFileToBase64Directive extends Base {
   @Output() filesChange: EventEmitter<any> = new EventEmitter();
 
   constructor(element: ElementRef) {
-    super('fileToBase64', element);
+    super('fileToArrBuf', element);
   }
 
   filesChanged(event: Event): void {
-    super.filesChanged(event, 'readAsDataURL', 'base64');
+    super.filesChanged(event, 'readAsArrayBuffer', 'arrBuf');
   }
 }

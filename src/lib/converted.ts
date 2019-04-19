@@ -3,4 +3,6 @@ export interface Converted {
   size: number;
   type: string;
   base64?: string;
+  text?: string;
+  arrBuf?: any;
 }
