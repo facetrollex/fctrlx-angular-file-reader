@@ -1,27 +1,22 @@
 # Fctrlx Angular File Reader
 Angular library that helps convert file (from input[type=file]) to base64/arrayBuffer/text using FileReader API.
 
-#Installation
+# Installation
 
 1. `npm install --save fctrlx-angular-file-reader`
 2. add dependency to your project
 
-`
+```
 import { FctrlxAngularFileReader } from 'fctrlx-angular-file-reader';
 
 @NgModule({
-
   ...
-  
   imports: [
-  
     ...,
-    
     FctrlxAngularFileReader,
-    
   ]
-  
-})`
+})
+```
 
 3. Enjoy!
 
@@ -40,22 +35,16 @@ import { FctrlxAngularFileReader } from 'fctrlx-angular-file-reader';
 - `filesChange` - Event that calling when you select a file(s), usage: `<input fileToText type="file" [(files)]="fileModelText" (filesChange)="onTextChanges($event)">`
 
 # Response
-`{
-
+```
+{
    name: string;//file name
-   
-   size: number;//file size
-   
+   size: number;//file size 
    type: string;//file type
-   
    base64?: string;// base64 data
-   
    text?: string;// text data
-   
    arrBuf?: any;// array buffer data
-   
- }`
-
+ }
+ ```
 
 # Full example:
 
