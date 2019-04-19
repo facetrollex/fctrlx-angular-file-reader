@@ -18,7 +18,7 @@ import { FctrlxAngularFileReader } from 'fctrlx-angular-file-reader';
 })
 ```
 
-3. Enjoy!
+**Enjoy!**
 
 # Usage:
 `<input fileToBase64 type="file" [(files)]="fileModel">`
@@ -47,7 +47,7 @@ import { FctrlxAngularFileReader } from 'fctrlx-angular-file-reader';
  ```
 
 # Full example:
-
+https://next.plnkr.co/edit/MlwNL3BKXdVtX3Xx?preview
 
 # Author
 _Alexey Khamitsevich_
