@@ -6,8 +6,7 @@ Angular library that helps convert file (from input[type=file]) to base64/arrayB
 1. `npm install --save fctrlx-angular-file-reader`
 2. add dependency to your project
 
-`
-import { FctrlxAngularFileReader } from 'fctrlx-angular-file-reader';
+`import { FctrlxAngularFileReader } from 'fctrlx-angular-file-reader';
 
 @NgModule({
   ...
@@ -15,26 +14,25 @@ import { FctrlxAngularFileReader } from 'fctrlx-angular-file-reader';
     ...,
     FctrlxAngularFileReader,
   ]
-})
-`
+})`
 
 3. Enjoy!
 
-#Usage:
+# Usage:
 `<input fileToBase64 type="file" [(files)]="fileModel">`
 
-#Available Directives
+# Available Directives
 - `fileToBase64`
 - `fileToArrBuf`
 - `fileToText`
 
-#Events and attributes.
+# Events and attributes.
 - `files` - your model that will be converted.
 - `type` - directives working only with type=file.
 - `multiple` - if you input is multiple - you will get in response array of files, in other case it will be an object.
 - `filesChange` - Event that calling when you select a file(s), usage: `<input fileToText type="file" [(files)]="fileModelText" (filesChange)="onTextChanges($event)">`
 
-#Response
+# Response
 `{
    name: string;//file name
    size: number;//file size
@@ -45,8 +43,8 @@ import { FctrlxAngularFileReader } from 'fctrlx-angular-file-reader';
  }`
 
 
-#Full example:
+# Full example:
 
 
-#Author
+# Author
 _Alexey Khamitsevich_
