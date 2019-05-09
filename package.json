@@ -1,6 +1,6 @@
 {
   "name": "fctrlx-angular-file-reader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Angular library that helps convert file (from input[type=file]) to base64/arrayBuffer/text using FileReader API.",
   "keywords": [
     "angular",
@@ -20,7 +20,7 @@
   "author": {
     "name": "Alexey Khamitsevich",
     "email": "alexey.khamitsevich@gmail.com",
-    "url" : "https://github.com/facetrollex"
+    "url": "https://github.com/facetrollex"
   },
   "repository": {
     "type": "git",
