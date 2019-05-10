@@ -10,7 +10,7 @@ import { Base } from './Base';
 @Directive({
   selector: '[fileToArrBuf]',
 })
-export class FctrlxFileToArrayBufferDirective extends Base {
+export class FileToArrayBuffer extends Base {
   @Input() files: any;
   @Input() type: string;
   @Input() multiple: undefined | null | string | boolean;

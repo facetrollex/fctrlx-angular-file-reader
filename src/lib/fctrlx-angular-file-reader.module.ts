@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
-import { FctrlxFileToBase64Directive } from './fctrlx-file-to-base64.directive';
-import { FctrlxFileToTextDirective } from './fctrlx-file-to-text.directive';
-import { FctrlxFileToArrayBufferDirective } from './fctrlx-file-to-array-buffer.directive';
+import { FileToBase64 } from './directives/file-to-base64';
+import { FileToText } from './directives/file-to-text';
+import { FileToArrayBuffer } from './directives/file-to-array-buffer';
 
 @NgModule({
   imports: [],
   declarations: [
-    FctrlxFileToBase64Directive,
-    FctrlxFileToTextDirective,
-    FctrlxFileToArrayBufferDirective,
+    FileToBase64,
+    FileToText,
+    FileToArrayBuffer,
   ],
   exports: [
-    FctrlxFileToBase64Directive,
-    FctrlxFileToTextDirective,
-    FctrlxFileToArrayBufferDirective,
+    FileToBase64,
+    FileToText,
+    FileToArrayBuffer,
   ],
 })
 export class FctrlxAngularFileReader { }

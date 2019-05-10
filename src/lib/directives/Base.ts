@@ -4,7 +4,7 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { Converted } from './converted';
+import { Converted } from '../models/converted';
 
 export class Base implements OnInit, OnDestroy {
   public type: string;
