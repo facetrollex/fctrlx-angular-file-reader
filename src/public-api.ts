@@ -1,5 +1,3 @@
-/*
- * Public API Surface of fctrlx-angular-file-reader
- */
-
 export * from './lib/fctrlx-angular-file-reader.module';
+export * from './lib/services/file-reader-promise-like';
+export * from './lib/services/file-reader-observable-like';

@@ -49,7 +49,7 @@ export class Base implements OnInit, OnDestroy {
       const reader = new FileReader();
       const { name, size, type } = files[key];
 
-      reader.onload = (file) => {
+      reader.onloadend = (file) => {
         this.store(file, saveKey);
       };
 

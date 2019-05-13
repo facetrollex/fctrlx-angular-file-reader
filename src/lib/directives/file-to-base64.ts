@@ -6,6 +6,7 @@ import {
   Output,
 } from '@angular/core';
 import { Base } from './Base';
+import { DirectiveConfig } from '../models/directive-config';
 
 @Directive({
   selector: '[fileToBase64]',
@@ -17,11 +18,17 @@ export class FileToBase64 extends Base {
 
   @Output() filesChange: EventEmitter<any> = new EventEmitter();
 
+  static readonly config: DirectiveConfig = {
+    name: 'fileToBase64',
+    method: 'readAsDataURL',
+    storeKey: 'base64',
+  };
+
   constructor(element: ElementRef) {
-    super('fileToBase64', element);
+    super(FileToBase64.config.name, element);
   }
 
   filesChanged(event: Event): void {
-    super.filesChanged(event, 'readAsDataURL', 'base64');
+    super.filesChanged(event, FileToBase64.config.method, FileToBase64.config.storeKey);
   }
 }

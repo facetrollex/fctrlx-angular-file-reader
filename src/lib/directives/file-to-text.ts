@@ -6,6 +6,7 @@ import {
     Output,
 } from '@angular/core';
 import { Base } from './Base';
+import { DirectiveConfig } from '../models/directive-config';
 
 @Directive({
   selector: '[fileToText]',
@@ -17,11 +18,17 @@ export class FileToText extends Base {
 
   @Output() filesChange: EventEmitter<any> = new EventEmitter();
 
+  static readonly config: DirectiveConfig = {
+    name: 'fileToText',
+    method: 'readAsText',
+    storeKey: 'text',
+  };
+
   constructor(element: ElementRef) {
-    super('fileToText', element);
+    super(FileToText.config.name, element);
   }
 
   filesChanged(event: Event): void {
-    super.filesChanged(event, 'readAsText', 'text');
+    super.filesChanged(event, FileToText.config.method, FileToText.config.storeKey);
   }
 }
