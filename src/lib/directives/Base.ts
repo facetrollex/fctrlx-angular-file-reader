@@ -10,6 +10,8 @@ export class Base implements OnInit, OnDestroy {
   public type: string;
   public multiple: undefined | null | string | boolean;
   public filesChange: EventEmitter<any>;
+  public onProgress: EventEmitter<any>;
+  public onError: EventEmitter<any>;
 
   private readonly TYPE_FILE: string = 'file';
   private readonly directiveName: string;
@@ -49,9 +51,9 @@ export class Base implements OnInit, OnDestroy {
       const reader = new FileReader();
       const { name, size, type } = files[key];
 
-      reader.onloadend = (file) => {
-        this.store(file, saveKey);
-      };
+      reader.onloadend = (file) => this.store(file, saveKey);
+      reader.onerror = (event) => this.handleError(event);
+      reader.onprogress = (event) => this.handleProgress(event);
 
       this.converted.push({ name, size, type });
 
@@ -59,6 +61,16 @@ export class Base implements OnInit, OnDestroy {
     });
 
     this.filesChange.next(this.isMultiple ? this.converted : this.converted[0]);
+  }
+
+  handleError(event: any): void {
+    this.onError.next(event.target.error.message || 'Something went wrong');
+  }
+
+  handleProgress(event: any): void {
+    if(event.lengthComputable) {
+      this.onProgress.next(Math.round((event.loaded / event.total) * 100));
+    }
   }
 
   store(file: { target }, key: string): void {

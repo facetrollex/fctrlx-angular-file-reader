@@ -17,6 +17,8 @@ export class FileToArrayBuffer extends Base {
   @Input() multiple: undefined | null | string | boolean;
 
   @Output() filesChange: EventEmitter<any> = new EventEmitter();
+  @Output() onProgress: EventEmitter<any> = new EventEmitter();
+  @Output() onError: EventEmitter<any> = new EventEmitter();
 
   static readonly config: DirectiveConfig = {
     name: 'fileToArrBuf',

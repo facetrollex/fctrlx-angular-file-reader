@@ -11,6 +11,10 @@ Angular library that helps convert file (from input[type=file]) to base64/arrayB
 
 # [Documentation](https://github.com/facetrollex/fctrlx-angular-file-reader/wiki)
 # [Example](https://next.plnkr.co/edit/MlwNL3BKXdVtX3Xx)
+# Support
+_If you have any suggestions or if you found an issue, please add it to [here](https://github.com/facetrollex/fctrlx-angular-file-reader/issues)._
+
+**Thanks!!**
 
 # Author
 _Alexey Khamitsevich_
