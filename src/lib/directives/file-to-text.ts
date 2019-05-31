@@ -19,6 +19,7 @@ export class FileToText extends Base {
   @Output() filesChange: EventEmitter<any> = new EventEmitter();
   @Output() onProgress: EventEmitter<any> = new EventEmitter();
   @Output() onError: EventEmitter<any> = new EventEmitter();
+  @Output() onAbort: EventEmitter<any> = new EventEmitter();
 
   static readonly config: DirectiveConfig = {
     name: 'fileToText',

@@ -12,6 +12,7 @@ export class Base implements OnInit, OnDestroy {
   public filesChange: EventEmitter<any>;
   public onProgress: EventEmitter<any>;
   public onError: EventEmitter<any>;
+  public onAbort: EventEmitter<any>;
 
   private readonly TYPE_FILE: string = 'file';
   private readonly directiveName: string;
@@ -51,9 +52,19 @@ export class Base implements OnInit, OnDestroy {
       const reader = new FileReader();
       const { name, size, type } = files[key];
 
-      reader.onloadend = (file) => this.store(file, saveKey);
-      reader.onerror = (event) => this.handleError(event);
-      reader.onprogress = (event) => this.handleProgress(event);
+      reader.onloadend = (file) => {
+        this.store(file, saveKey);
+      };
+
+      reader.onerror = (event) => {
+        this.handleError(event);
+      };
+
+      reader.onprogress = (event) => {
+        this.handleProgress(event);
+      };
+
+      reader.onabort = () => this.handleAbort();
 
       this.converted.push({ name, size, type });
 
@@ -68,9 +79,13 @@ export class Base implements OnInit, OnDestroy {
   }
 
   handleProgress(event: any): void {
-    if(event.lengthComputable) {
+    if (event.lengthComputable) {
       this.onProgress.next(Math.round((event.loaded / event.total) * 100));
     }
+  }
+
+  handleAbort(): void {
+    this.onAbort.next('read cancelled');
   }
 
   store(file: { target }, key: string): void {
